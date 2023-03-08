@@ -13,7 +13,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 • PROMPT
 • CONSOLE.LOG
-• MATH
+• OPERATIONS
 • IF/ELSE
 • INNERHTML
 */
@@ -28,6 +28,7 @@ const clientKm = Number(prompt("Inserisci il numero dei km che vuoi percorrere")
 const clientAge = Number(prompt("Inserisci la tua età"));
 console.log(clientKm , clientAge);
 
+
 /* calcolo il prezzo del biglietto 0.21€/km inizializzandolo in una variabile e lo mostro sia numerico (per accertarmi di avere un valore numerico) sia in stringa*/
 
 const ticketPrice = (clientKm * 0.21);
@@ -40,14 +41,21 @@ if (clientAge < 18) {
     console.log(under18Sale);
     const ticketUnder18 = (ticketPrice - under18Sale);
     console.log(`${ticketUnder18}€`);
+    document.getElementById("price").innerHTML = ticketUnder18;
 } else if (clientAge > 65) {
     const over65Sale = (ticketPrice * 40 / 100);
     console.log(over65Sale)
     const ticketOver65 = (ticketPrice - over65Sale);
     console.log(`${ticketOver65}€`);
+    document.getElementById("price").innerHTML = ticketOver65;
 } else {
     console.log(`${ticketPrice}€`);
+    document.getElementById("price").innerHTML = ticketPrice;
 };
+
+document.getElementById("km").innerHTML = clientKm;
+document.getElementById("età").innerHTML = clientAge;
+
 
 
 
