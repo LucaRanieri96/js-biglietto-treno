@@ -21,12 +21,17 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 // 3. ESECUZIONE :
 
 /* chiedo all'utente quanti km vuole percorrere e l'età,
-   inizializzo due variabili e le mostro in console */
+   inizializzo due variabili e le mostro in console 
+*/
 
 const clientKm = Number(prompt("Inserisci il numero dei km che vuoi percorrere"));
 const clientAge = Number(prompt("Inserisci la tua età"));
 console.log(clientKm , clientAge);
 
-/* calcolo il prezzo del biglietto 0.21€/km */
+/* calcolo il prezzo del biglietto 0.21€/km inizializzandolo in una variabile e lo mostro sia numerico (per accertarmi di avere un valore numerico) sia in stringa*/
+
 const ticketPrice = (clientKm * 0.21);
-console.log(`${ticketPrice}€`)
+console.log(ticketPrice);
+console.log(`${ticketPrice}€`);
+
+/* calcolo gli sconti 20% under18 e 40% over65 */
