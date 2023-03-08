@@ -14,14 +14,14 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 • PROMPT
 • CONSOLE.LOG
 • OPERATIONS
-• .tofixed(2)
 • IF/ELSE
 • INNERHTML
+• .tofixed(2)
 */
 
 // 3. ESECUZIONE :
 
-/* chiedo all'utente quanti km vuole percorrere e l'età,
+/* chiedo all'utente quanti km vuole percorrere e l'età che ha,
    inizializzo due variabili e le mostro in console 
 */
 
@@ -30,35 +30,31 @@ const clientAge = Number(prompt("Inserisci la tua età"));
 console.log(clientKm , clientAge);
 
 
-/* calcolo il prezzo del biglietto 0.21€/km inizializzandolo in una variabile e lo mostro sia numerico (per accertarmi di avere un valore numerico) sia in stringa*/
+/* calcolo il prezzo del biglietto 0.21€/km inizializzandolo in una variabile e lo mostro in console */
 
-/* limito il prezzo del biglietto a 2 decimali */
-const ticketPrice = (clientKm * 0.21).toFixed(2);
+let ticketPrice = clientKm * 0.21;
 console.log(ticketPrice);
 
 
 /* calcolo gli sconti 20% under18 e 40% over65 e li applico al ticketPrice */
 
 if (clientAge < 18) {
-    const under18Sale = (ticketPrice * 20 / 100).toFixed(2);
+    const under18Sale = ticketPrice * 20 / 100;
     console.log(under18Sale);
-    const ticketUnder18 = (ticketPrice - under18Sale);
-    console.log(`${ticketUnder18}€`);
-    document.getElementById("price").innerHTML = ticketUnder18;
-} else if (clientAge > 65) {
-    const over65Sale = (ticketPrice * 40 / 100).toFixed(2);
-    console.log(over65Sale)
-    const ticketOver65 = (ticketPrice - over65Sale);
-    console.log(`${ticketOver65}€`);
-    document.getElementById("price").innerHTML = ticketOver65;
-} else {
+    ticketPrice = ticketPrice - under18Sale;
     console.log(`${ticketPrice}€`);
-    document.getElementById("price").innerHTML = ticketPrice;
-};
+
+} else if (clientAge > 65) {
+    const over65Sale = ticketPrice * 40 / 100;
+    console.log(over65Sale);
+    ticketPrice = ticketPrice - over65Sale;
+    console.log(`${ticketPrice}€`);
+}
 
 /* Inserisco i dati nell'html */
 document.getElementById("km").innerHTML = clientKm;
 document.getElementById("età").innerHTML = clientAge;
+document.getElementById("price").innerHTML = ticketPrice.toFixed(2);
 
 
 
