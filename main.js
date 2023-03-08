@@ -56,6 +56,7 @@ if (clientAge < 18) {
     document.getElementById("price").innerHTML = ticketPrice;
 };
 
+/* Inserisco i dati nell'html */
 document.getElementById("km").innerHTML = clientKm;
 document.getElementById("età").innerHTML = clientAge;
 
