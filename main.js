@@ -14,6 +14,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 • PROMPT
 • CONSOLE.LOG
 • OPERATIONS
+• .tofixed(2)
 • IF/ELSE
 • INNERHTML
 */
@@ -31,8 +32,10 @@ console.log(clientKm , clientAge);
 
 /* calcolo il prezzo del biglietto 0.21€/km inizializzandolo in una variabile e lo mostro sia numerico (per accertarmi di avere un valore numerico) sia in stringa*/
 
-const ticketPrice = (clientKm * 0.21);
+/* limito il prezzo del biglietto a 2 decimali */
+const ticketPrice = (clientKm * 0.21).toFixed(2);
 console.log(ticketPrice);
+
 
 /* calcolo gli sconti 20% under18 e 40% over65 e li applico al ticketPrice */
 
